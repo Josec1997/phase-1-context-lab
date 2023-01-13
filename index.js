@@ -21,3 +21,42 @@ const allWagesFor = function () {
     return payable
 }
 
+
+
+
+function createEmployeeRecord(employeeInfo) {
+   const employeeRecord = {
+    firstName: employeeInfo[0],
+    familyName: employeeInfo[1],
+    title: employeeInfo[2],
+    payPerHour: employeeInfo[3],
+    timeInEvents: [],
+    timeOutEvents: [],
+ }
+//  console.log('eeeeeeeeeeee',array)
+
+    return employeeRecord
+}
+
+
+function createEmployeeRecords(employeeRecord){
+const employeeRecs = employeeRecord.map(employeeRecord => createEmployeeRecord(employeeRecord))
+return employeeRecs
+// console.log('arghhhhhhhhhhhhhhhhh',EmployeeRecord)
+}
+
+function creatTimeInEvent(dateStampIn) {
+ let clockIn = {
+    type: 'TimeIn',
+    hour: parseInt(dateStampIn.hour) ,
+    date: dateStampIn.date ,
+  }
+  return clockIn
+}
+
+
+
+// it is but as you know the function will only take one parameter which isnt the employee record so is there any way you can think of to access the object?
+
+// Close but call is used on functions
+// you can do this.timeInEvents
